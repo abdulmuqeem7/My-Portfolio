@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Mohd Abdul Muqeem</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background: #000;
+            color: #fff;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        header {
+            height: 100vh;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)), url('background.jpg') center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+        }
+
+        header img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid #ff6f61;
+            margin-bottom: 20px;
+        }
+
+        header h1 {
+            font-size: 3.5em;
+            margin: 0;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1.5em;
+            margin: 10px 0 20px;
+            font-weight: 700;
+        }
+
+        header a {
+            display: inline-block;
+            text-decoration: none;
+            color: #fff;
+            background: #ff6f61;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        header a:hover {
+            background: #9a9fff;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            background: #111;
+            z-index: 1000;
+            padding: 10px 0;
+            text-align: center;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            color: #ff6f61;
+        }
+
+        section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        h2 {
+            color: #ff6f61;
+            text-align: center;
+            margin-bottom: 40px;
+            font-weight: 700;
+        }
+
+        projects {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+    
+        .project {
+            background: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid #ff6f61;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease-in-out;
+        }
+    
+        .project:hover {
+            transform: scale(1.02);
+        }
+    
+        .project h3 {
+            color: #ff6f61;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+    
+        .project p {
+            color: #ddd;
+        }
+        .project a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 15px;
+            background: #ff6f61;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+    
+        .project a:hover {
+            background: #9a9fff;
+        }
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .skill {
+            width: 100%;
+            max-width: 300px;
+            background: #1e1e1e;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            color: #fff;
+            font-weight: 700;
+        }
+
+        .skill-bar {
+            height: 8px;
+            width: 100%;
+            background: #333;
+            border-radius: 4px;
+            margin-top: 10px;
+            position: relative;
+        }
+
+        .skill-bar span {
+            height: 100%;
+            display: block;
+            background: #ff6f61;
+            border-radius: 4px;
+            position: absolute;
+        }
+
+        footer {
+            background: #111;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 60px;
+        }
+
+        footer a {
+            color: #ff6f61;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Mobile Responsiveness */
+        @media screen and (max-width: 768px) {
+            header h1 {
+                font-size: 2.5em;
+            }
+
+            header p {
+                font-size: 1.2em;
+            }
+
+            nav {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav a {
+                margin: 5px;
+                font-size: 0.9em;
+            }
+
+            section {
+                padding: 40px 15px;
+            }
+
+            .projects, .skills-list {
+                grid-template-columns: 1fr;
+            }
+
+            .skill {
+                width: 90%;
+                max-width: 100%;
+            }
+
+            .project {
+                text-align: center;
+            }
+
+            footer {
+                padding: 20px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+    </nav>
+    <header>
+        <img src="Muqeem.jpg" alt="Profile Picture">
+        <h1>Mohd Abdul Muqeem</h1>
+        <p>Data Scientist</p>
+        <a href="#about">Explore More</a>
+    </header>
+
+    <section id="about" data-aos="fade-up">
+        <h2>About Me</h2>
+        <p>A highly motivated data science professional with a BSc in Computer Science and advanced certification in data science. With 7 Months of hands on of experience in data analysis, machine learning, and NLP. Skilled in Python, SQL, and
+            Power BI, delivering insights and predictive models to solve business challenges. Passionate about leveraging
+            advanced analytics for innovation</p>
+    </section>
+
+    <section id="education" data-aos="fade-right">
+        <h2>Education</h2>
+        <p><strong>Bachelor of Science in Computer Science</strong><br>Osmania University (2021 - 2024)</p>
+        <p><strong>Intermediate - MPC</strong><br>Narayana Junior College (2019 - 2021)</p>
+        <p><strong>SSC - 10th</strong><br>Tulasi High School (2008 - 2019)</p>
+    </section>
+
+    <section id="experience" data-aos="fade-left">
+        <h2>Experience</h2>
+        <p><strong>Data Science Intern</strong><br>Unified Mentor Pvt Ltd (July - August 2024)</p>
+        <ul>
+            <li>Executed data cleaning and analysis on large datasets using Python and SQL, ensuring 100% data accuracy.</li>
+            <li>Created visualizations in Power BI to present insights, supporting data-driven decision-making..</li>
+            <li>Automated data processing workflows, reducing manual effort by 40% and increasing efficiency.</li>
+        </ul>
+        <p><strong>Data Science Intern</strong><br>Full Stack Academy (January - May 2024)</p>
+        <ul>
+            <li>Analyzed large datasets using Python and SQL, optimizing predictive models and improving accuracy by 20%</li>
+            <li>Gained expertise in machine learning, deep learning algorithms, and natural language processing.</li>
+            <li>Optimized ML models, improving stock movement prediction F1-score by 10% (from 0.80 to 0.88) through feature engineering and sentiment analysis.</li>
+        </ul>
+    </section>
+
+    <section id="projects" data-aos="zoom-in" class="projects">
+        <h2>Projects</h2>
+        <div class="project">
+            <h3><img src="job.png" width="24"> Job Market Analysis in Data Field</h3>
+            <p>Conducted analysis of 14,199 job roles, uncovering trends in salaries, job categories, and work settings.</p>
+            <p>Visualized insights on top paying and in demand roles, aiding the understanding of market dynamics.</p>
+            <p>Tools: Python, NumPy, Pandas, Matplotlib, Seaborn</p>
+            <a href="https://github.com/abdulmuqeem7/Job-Market-Analysis-in-data-field" target="_blank">GitHub Repo</a>
+        </div>
+
+        <div class="project">
+            <h3><img src="Stock.png" width="24"> Stock Movement Analysis Using Reddit Data</h3>
+            <p>Implemented sentiment analysis to classify financial discussions into sentiment categories and visualized insights.</p>
+            <p>Leveraged TextBlob for sentiment polarity and categorized results into Positive, Neutral, and Negative.</p>
+            <p> Trained models, including Logistic Regression, Random Forest, and Decision Tree, achieving up to 80% accuracy in predicting sentiment-driven market movements.</p>
+            <p>Tools: Python, NumPy, Pandas, Matplotlib, Seaborn, PRAW, Sklearn</p>
+            <a href="https://github.com/abdulmuqeem7/Stock-Movement-Analysis" target="_blank">GitHub Repo</a>
+        </div>
+
+        <div class="project">
+            <h3><img src="employee.png" width="24"> Employee Experience Survey Analysis</h3>
+            <p>The sales department has the highest number of employees. This suggests a significant focus or business reliance on the sales function within the organization.</p>
+            <p>Detailed visualizations and analyses provide insights into workforce structure. The focus seems to be on department-specific metrics, possibly extending to other dimensions like tenure, performance, or diversity.</p>
+            <p>Tools : Python, Pandas, NumPy, Maplotlib, Seaborn, Scipy</p>
+            <a href="https://github.com/abdulmuqeem7/Employee-Experience-Survey-Analysis" target="_blank">GitHub Repo</a>
+        </div>
+        
+        <div class="project">
+            <h3><img src="EV.png" width="24"> Global EV Charging Station Analysis</h3>
+            <p>Analyzed EV charging stations worldwide using Python, uncovering trends in station ratings, charger types, and cost distribution through data visualization and statistical analysis.</p>
+            <p>Identified top 10% highest-rated stations and found that fast chargers (DC Level 3) are 40% more common in urban areas compared to rural regions.</p>
+            <p>Conducted a cost analysis of 50+ station operators, highlighting price variations and identifying the most cost-effective charging networks.</p>
+            <p>Tools : Python, Pandas, NumPy, Maplotlib, Seaborn </p>
+            <a href="https://github.com/abdulmuqeem7/Global-EV-charging-station-analysis" target="_blank">GitHub Repo</a>
+        </div>
+
+    </section>
+
+    <section id="skills" data-aos="flip-up">
+        <h2>Skills</h2>
+        <div class="skills-list">
+            <div class="skill">Python
+                <div class="skill-bar"><span style="width: 90%;"></span></div>
+            </div>
+            <div class="skill">Pandas
+                <div class="skill-bar"><span style="width: 85%;"></span></div>
+            </div>
+            <div class="skill">NumPy
+                <div class="skill-bar"><span style="width: 80%;"></span></div>
+            </div>
+            <div class="skill">SQL
+                <div class="skill-bar"><span style="width: 85%;"></span></div>
+            </div>
+            <div class="skill">MySQL
+                <div class="skill-bar"><span style="width: 75%;"></span></div>
+            </div>
+            <div class="skill">Power BI
+                <div class="skill-bar"><span style="width: 70%;"></span></div>
+            </div>
+            <div class="skill">Matplotlib
+                <div class="skill-bar"><span style="width: 80%;"></span></div>
+            </div>
+            <div class="skill">Excel
+                <div class="skill-bar"><span style="width: 90%;"></span></div>
+            </div>
+            <div class="skill">Machine Learning
+                <div class="skill-bar"><span style="width: 75%;"></span></div>
+            </div>
+            <div class="skill">scikit-learn
+                <div class="skill-bar"><span style="width: 70%;"></span></div>
+            </div>
+            <div class="skill">Deep Learning
+                <div class="skill-bar"><span style="width: 60%;"></span></div>
+            </div>
+            <div class="skill">Tensorflow
+                <div class="skill-bar"><span style="width: 65%;"></span></div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <p>Contact: <a href="mailto:abdulmuqeem901@gmail.com">abdulmuqeem901@gmail.com</a> | +919700828253</p>
+        <p><a href="https://www.linkedin.com/in/mohd-abdul-muqeem-68b7b42b9/" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
+        </p>
+        <a href="ABDUL MUQEEM.pdf" download style="display: inline-block; background: #ff6f61; color: #fff; padding: 10px 20px; border-radius: 25px; font-weight: bold; text-decoration: none;">Download Resume</a>
+        <p>&copy; 2025  Mohd Abdul Muqeem</p>
+    </footer>
+
+    <script>
+        AOS.init();
+    </script>
+
+</body>
+</html>
