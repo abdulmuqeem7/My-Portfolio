@@ -109,6 +109,23 @@
             transition: transform 0.3s ease-in-out;
             margin-bottom: 30px; 
         }
+
+        .project-link {
+            text-decoration: none; /* Removes underline */
+            color: inherit; /* Inherits text color */
+            display: block; /* Makes the entire div clickable */
+        }
+        
+        .project {
+            cursor: pointer; /* Shows pointer when hovering over the project */
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .project:hover {
+            transform: scale(1.02);
+            background: #2a2a2a; /* Slightly darkens on hover */
+        }
+        
     
         .project:hover {
             transform: scale(1.02);
@@ -127,7 +144,7 @@
 
         .project a{
             color : blue;
-            font: bold;
+            font: italic;
         }
 
         .skills-list {
@@ -210,7 +227,7 @@
             .projects, .skills-list {
                 grid-template-columns: 1fr;
             }
-
+            
             .skill {
                 width: 90%;
                 max-width: 100%;
@@ -273,54 +290,54 @@
 
     <section id="projects" data-aos="zoom-in" class="projects">
         <h2>Projects</h2>
+        <a href="https://github.com/abdulmuqeem7/Job-Market-Analysis-in-data-field" target="_blank" class="project-link">
+            <div class="project">
+                <h3>
+                    <img src="job.png" width="40">Job Market Analysis in Data Field
+                </h3>
+                <p>Conducted analysis of 14,199 job roles, uncovering trends in salaries, job categories, and work settings.</p>
+                <p>Visualized insights on top-paying and in-demand roles, aiding the understanding of market dynamics.</p>
+                <p>Tools: Python, NumPy, Pandas, Matplotlib, Seaborn</p>
+            </div>
+        </a>
+        
+
+        <a href="https://github.com/abdulmuqeem7/Stock-Movement-Discussion-Analysis" target="_blank" class="project-link">
         <div class="project">
             <h3>
-            <a href="https://github.com/abdulmuqeem7/Job-Market-Analysis-in-data-field" target="_blank" style="color: #ff6f61; text-decoration: none;">
-            <img src="job.png" width="24"> Job Market Analysis in Data Field
-            </a>
-            </h3>
-            <p>Conducted analysis of 14,199 job roles, uncovering trends in salaries, job categories, and work settings.</p>
-            <p>Visualized insights on top paying and in demand roles, aiding the understanding of market dynamics.</p>
-            <p>Tools: Python, NumPy, Pandas, Matplotlib, Seaborn</p>
-        </div>
-
-
-        <div class="project">
-            <h3>
-                <a href="https://github.com/abdulmuqeem7/Stock-Movement-Discussion-Analysis" target="_blank" style="color: #ff6f61; text-decoration: none;">
-                <img src="Stock.png" width="24"> Stock Movement Analysis Using Reddit Data
-                </a>
+                <img src="Stock.png" width="40"> Stock Movement Analysis Using Reddit Data
             </h3>
             <p>Implemented sentiment analysis to classify financial discussions into sentiment categories and visualized insights.</p>
             <p>Leveraged TextBlob for sentiment polarity and categorized results into Positive, Neutral, and Negative.</p>
-            <p> Trained models, including Logistic Regression, Random Forest, and Decision Tree, achieving up to 80% accuracy in predicting sentiment-driven market movements.</p>
+            <p>Trained models, including Logistic Regression, Random Forest, and Decision Tree, achieving up to 80% accuracy in predicting sentiment-driven market movements.</p>
             <p>Tools: Python, NumPy, Pandas, Matplotlib, Seaborn, PRAW, Sklearn</p>
         </div>
-
-
-        <div class="project">
-            <h3>
-                <a href="https://github.com/abdulmuqeem7/Employee-Experience-Survey-Analysis" target="_blank" style="color: #ff6f61; text-decoration: none;">
-                <img src="employee.png" width="24"> Employee Experience Survey Analysis
-                </a>
-            </h3>
-            <p>The sales department has the highest number of employees. This suggests a significant focus or business reliance on the sales function within the organization.</p>
-            <p>Detailed visualizations and analyses provide insights into workforce structure. The focus seems to be on department-specific metrics, possibly extending to other dimensions like tenure, performance, or diversity.</p>
-            <p>Tools : Python, Pandas, NumPy, Maplotlib, Seaborn, Scipy</p>
-        </div>
+        </a>
 
         
-        <div class="project">
-            <h3>
-                <a href="https://github.com/abdulmuqeem7/Global-EV-charging-station-analysis" target="_blank" style="color: #ff6f61; text-decoration: none;">
-                <img src="EV.png" width="24"> Global EV Charging Station Analysis
-                </a>
-            </h3>
-            <p>Analyzed EV charging stations worldwide using Python, uncovering trends in station ratings, charger types, and cost distribution through data visualization and statistical analysis.</p>
-            <p>Identified top 10% highest-rated stations and found that fast chargers (DC Level 3) are 40% more common in urban areas compared to rural regions.</p>
-            <p>Conducted a cost analysis of 50+ station operators, highlighting price variations and identifying the most cost-effective charging networks.</p>
-            <p>Tools : Python, Pandas, NumPy, Maplotlib, Seaborn </p>
-        </div>
+        <a href="https://github.com/abdulmuqeem7/Employee-Experience-Survey-Analysis" target="_blank" class="project-link">
+            <div class="project">
+                <h3>
+                    <img src="employee.png" width="40"> Employee Experience Survey Analysis
+                </h3>
+                <p>The sales department has the highest number of employees. This suggests a significant focus or business reliance on the sales function within the organization.</p>
+                <p>Detailed visualizations and analyses provide insights into workforce structure. The focus seems to be on department-specific metrics, possibly extending to other dimensions like tenure, performance, or diversity.</p>
+                <p>Tools: Python, Pandas, NumPy, Matplotlib, Seaborn, Scipy</p>
+            </div>
+        </a>
+
+        
+        <a href="https://github.com/abdulmuqeem7/Global-EV-charging-station-analysis" target="_blank" class="project-link">
+            <div class="project">
+                <h3>
+                    <img src="EV.png" width="40"> Global EV Charging Station Analysis
+                </h3>
+                <p>Analyzed EV charging stations worldwide using Python, uncovering trends in station ratings, charger types, and cost distribution through data visualization and statistical analysis.</p>
+                <p>Identified top 10% highest-rated stations and found that fast chargers (DC Level 3) are 40% more common in urban areas compared to rural regions.</p>
+                <p>Conducted a cost analysis of 50+ station operators, highlighting price variations and identifying the most cost-effective charging networks</p>
+                <p>Tools: Python, Pandas, NumPy, Matplotlib, Seaborn</p>
+            </div>
+        </a>
 
     </section>
 
